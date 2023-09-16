@@ -26,7 +26,36 @@ namespace EmployeeOPP.Clases
 
         private int ValidateDay(int day, int month, int year)
         {
-            return 2;
+            //Valido si el día pertenece a un año bisiesto
+            if (month == 2 && day == 29 && IsLeapYear(year))
+            {
+                return day;
+            }
+                        
+            if (month == 2 && day == 29 && IsLeapYear(year))
+            {
+                bool isLeapYear = false;
+                IsLeapYearException(isLeapYear, year);
+            }
+                        
+            int[] daysPerMonth = { 0, 31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31 };
+
+            if (day >= 1 && day <= daysPerMonth[month])
+            {
+                return day;
+            }
+            else
+            {
+                throw new DayException(String.Format("El día {0} no es valido para el mes {1}", day, month));
+            }
+        }
+
+        private void IsLeapYearException(bool isLeapYear, int year)
+        {
+            if (!isLeapYear)//Un booleano se niega anteponiendo !
+            {
+                throw new YearException(String.Format("El año {0} no es bisiesto!", year));
+            }
         }
 
         private bool IsLeapYear(int year)
@@ -34,6 +63,8 @@ namespace EmployeeOPP.Clases
             bool IsLeapYear = year % 400 == 0 || year % 4 == 0 && year % 100 != 0;
             return IsLeapYear;
         }
+
+        
 
         private int ValidateYear(int year)
         {
