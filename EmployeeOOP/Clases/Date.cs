@@ -50,6 +50,7 @@ namespace EmployeeOPP.Clases
             }
         }
 
+
         private void IsLeapYearException(bool isLeapYear, int year)
         {
             if (!isLeapYear)//Un booleano se niega anteponiendo !

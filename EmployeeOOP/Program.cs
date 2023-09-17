@@ -1,4 +1,5 @@
-﻿using EmployeeOPP.Clases;
+﻿using EmployeeOOP.Clases;
+using EmployeeOPP.Clases;
 using System;
 
 namespace EmployeeOPP
@@ -30,6 +31,10 @@ namespace EmployeeOPP
                 Date dateObject = new Date(year, month, day);
                 Console.Write("\n");//Salto de línea
                 Console.WriteLine(dateObject.ToString());
+
+                Employee employee = new Employee();
+                
+            
             }
             catch (Exception ex)//ex es una variable
             {
