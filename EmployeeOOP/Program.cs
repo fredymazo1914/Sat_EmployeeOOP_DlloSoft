@@ -15,7 +15,9 @@ namespace EmployeeOPP
                 Console.WriteLine("---------------");
 
                 //Declarar algunas variables
-                int day, month, year;
+                int day, month, year, id;
+                string firstName, lastName;
+                decimal salary;
 
                 Console.Write("Ingresar el día: ");
                 day = Convert.ToInt32(Console.ReadLine());
@@ -32,9 +34,46 @@ namespace EmployeeOPP
                 Console.Write("\n");//Salto de línea
                 Console.WriteLine(dateObject.ToString());
 
-                Employee employee = new Employee();
-                
-            
+                Console.WriteLine("Ingrese identificacióno: ");
+                id = Convert.ToInt32(Console.ReadLine());
+
+                Console.WriteLine("Ingrese el nombre completo: ");
+                firstName = Console.ReadLine();
+
+                Console.WriteLine("Ingrese los apellidos: ");
+                lastName = Console.ReadLine();
+
+                Console.WriteLine("Ingrese el salario devengado: ");
+                salary = Convert.ToDecimal (Console.ReadLine());
+
+                //Esta es la forma de crear objetos a partir de una clase concreta
+                SalaryEmployee salaryEmployee = new SalaryEmployee()
+                {
+                    //Se hace set (asignar) a cada una de las propiedades
+                    Id = id,
+                    FirstName = firstName,
+                    LastName = lastName,
+                    BirthDate = dateObject,
+                    HiringDate = dateObject,
+                    IsActive = true,
+                    Salary = salary,
+                };
+
+                Console.Clear();
+                Console.WriteLine(salaryEmployee); 
+
+                //
+                //salaryEmployee.Id = 1;
+                //salaryEmployee.FirstName = firstName;
+                //salaryEmployee.LastName = lastName;
+                //salaryEmployee.BirthDate = dateObject;
+                //salaryEmployee.HiringDate = dateObject;
+                //salaryEmployee.IsActive = true;
+
+
+
+
+
             }
             catch (Exception ex)//ex es una variable
             {

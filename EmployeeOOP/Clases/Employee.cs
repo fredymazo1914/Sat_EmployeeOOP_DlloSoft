@@ -20,6 +20,7 @@ namespace EmployeeOOP.Clases
         #region Methods
 
         public abstract decimal GetValueToPay();
+        //Esta clase no tiene código, el código de ir en las clases que heredan de esta clase abstracta
 
         public override string ToString()
         {
