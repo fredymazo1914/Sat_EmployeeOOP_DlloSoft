@@ -34,7 +34,7 @@ namespace EmployeeOPP
                 Console.Write("\n");//Salto de línea
                 Console.WriteLine(dateObject.ToString());
 
-                Console.WriteLine("Ingrese identificacióno: ");
+                Console.WriteLine("Ingrese identificación: ");
                 id = Convert.ToInt32(Console.ReadLine());
 
                 Console.WriteLine("Ingrese el nombre completo: ");
@@ -45,6 +45,9 @@ namespace EmployeeOPP
 
                 Console.WriteLine("Ingrese el salario devengado: ");
                 salary = Convert.ToDecimal (Console.ReadLine());
+
+                Console.WriteLine("Are you active? ");
+                bool isActive = Convert.ToBoolean(Console.ReadLine());
 
                 //Esta es la forma de crear objetos a partir de una clase concreta
                 SalaryEmployee salaryEmployee = new SalaryEmployee()
@@ -60,7 +63,7 @@ namespace EmployeeOPP
                 };
 
                 Console.Clear();
-                Console.WriteLine(salaryEmployee); 
+                Console.WriteLine(salaryEmployee);
 
                 //
                 //salaryEmployee.Id = 1;
@@ -70,9 +73,19 @@ namespace EmployeeOPP
                 //salaryEmployee.HiringDate = dateObject;
                 //salaryEmployee.IsActive = true;
 
+                //Creación objeto
+                Employee commissionEmployee = new CommissionEmployee()
+                {
+                    Id = id,
+                    FirstName = firstName,
+                    LastName = lastName,
+                    BirthDate = dateObject,
+                    HiringDate = dateObject,
+                    IsActive = isActive
+                };
 
-
-
+                Console.Clear();
+                Console.WriteLine(commissionEmployee.ToString());
 
             }
             catch (Exception ex)//ex es una variable
