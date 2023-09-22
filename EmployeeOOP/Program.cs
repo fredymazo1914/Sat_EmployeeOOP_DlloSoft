@@ -16,7 +16,7 @@ namespace EmployeeOPP
 
                 //Declarar algunas variables
                 int day, month, year, id;
-                string firstName, lastName;
+                string firstName, lastName, birthDate, hiringDate;
                 decimal salary;
 
                 Console.Write("Ingresar el día: ");
@@ -46,8 +46,26 @@ namespace EmployeeOPP
                 Console.WriteLine("Ingrese el salario devengado: ");
                 salary = Convert.ToDecimal (Console.ReadLine());
 
+                //Console.WriteLine("Ingrese su fecha de cumpleaños: ");
+                //birthDate = Console.ReadLine();
+
+                //Console.WriteLine("Ingrese su fecha de contratación: ");
+                //hiringDate = Console.ReadLine();
+
                 Console.WriteLine("Are you active? ");
                 bool isActive = Convert.ToBoolean(Console.ReadLine());
+
+                //Seteamos las tres nuevas propiedades diferentes a la clase padre
+                Console.WriteLine("Ingrese su porcentaje de comisión: ");
+                double commissionPercentaje = Convert.ToDouble (Console.ReadLine());
+                
+                Console.WriteLine("Ingrese el valor de las ventas: ");
+                decimal sales = Convert.ToDecimal(Console.ReadLine());
+
+                Console.WriteLine("******************************");
+                Console.WriteLine("******SALARY EMPLOYEE*********");
+                Console.WriteLine("******************************");
+
 
                 //Esta es la forma de crear objetos a partir de una clase concreta
                 SalaryEmployee salaryEmployee = new SalaryEmployee()
@@ -65,13 +83,17 @@ namespace EmployeeOPP
                 Console.Clear();
                 Console.WriteLine(salaryEmployee);
 
-                //
                 //salaryEmployee.Id = 1;
                 //salaryEmployee.FirstName = firstName;
                 //salaryEmployee.LastName = lastName;
                 //salaryEmployee.BirthDate = dateObject;
                 //salaryEmployee.HiringDate = dateObject;
                 //salaryEmployee.IsActive = true;
+
+
+                Console.WriteLine("******************************");
+                Console.WriteLine("******COMISSION EMPLOYEE******");
+                Console.WriteLine("******************************");
 
                 //Creación objeto
                 Employee commissionEmployee = new CommissionEmployee()
@@ -81,10 +103,14 @@ namespace EmployeeOPP
                     LastName = lastName,
                     BirthDate = dateObject,
                     HiringDate = dateObject,
-                    IsActive = isActive
+                    IsActive = isActive,
+                    CommisionPercentaje = commissionPercentaje/100,
+                    Sales = sales,
+
                 };
 
                 Console.Clear();
+                //Mostramos en pantalla el ToStrin de la clase commissionEmployee
                 Console.WriteLine(commissionEmployee.ToString());
 
             }

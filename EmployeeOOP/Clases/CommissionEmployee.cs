@@ -20,15 +20,20 @@ namespace EmployeeOOP.Clases
 
         public override decimal GetValueToPay()
         {
-            return Sales * (decimal)CommisionPercentaje;
+            return Sales * (decimal)CovertPercentage(CommisionPercentaje);
         }
 
         public override string ToString()
         {
             return $"{base.ToString()}\n\t" +
-                $"Commission Percentage.....{CommisionPercentaje}\n\t" +
-                $"Sales.....{Sales}\n\t" +
-                $"Value to Pay..... {GetValueToPay()}";
+                $"Commission Percentage.....{CommisionPercentaje:P2}\n\t" +
+                $"Sales.....{Sales:C2}\n\t" +
+                $"Value to Pay..... {GetValueToPay():C2}";
+        }
+
+        public double CovertPercentage(double commisionPercentage)
+        {
+            return commisionPercentage / 100;
         }
 
         #endregion
