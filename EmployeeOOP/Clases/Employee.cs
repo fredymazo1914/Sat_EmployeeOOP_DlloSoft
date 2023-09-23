@@ -32,16 +32,8 @@ namespace EmployeeOOP.Clases
                 $"Fecha de cumpleaños: {BirthDate} \n\t " +
                 $"Fecha de Contratación: {HiringDate} \n\t " +
                 $"¿Empleado Activo?: {IsActive}";
-
         }
 
         #endregion
-
-
-
-
-
-
-
     }
 }

@@ -11,8 +11,9 @@ namespace EmployeeOPP
             //Controlar exepciones
             try
             {
-                Console.WriteLine("OOP APPLICATION");
-                Console.WriteLine("---------------");
+                Console.WriteLine("---------------------------");
+                Console.WriteLine("------OOP APPLICATION------");
+                Console.WriteLine("---------------------------");
 
                 //Declarar algunas variables
                 int day, month, year, id;
@@ -33,6 +34,7 @@ namespace EmployeeOPP
                 Date dateObject = new Date(year, month, day);
                 Console.Write("\n");//Salto de línea
                 Console.WriteLine(dateObject.ToString());
+                Console.Write("\n");
 
                 Console.WriteLine("Ingrese identificación: ");
                 id = Convert.ToInt32(Console.ReadLine());
@@ -43,24 +45,18 @@ namespace EmployeeOPP
                 Console.WriteLine("Ingrese los apellidos: ");
                 lastName = Console.ReadLine();
 
-                Console.WriteLine("Ingrese el salario devengado: ");
-                salary = Convert.ToDecimal (Console.ReadLine());
+                Console.WriteLine("Ingrese su fecha de cumpleaños: ");
+                birthDate = Console.ReadLine();
 
-                //Console.WriteLine("Ingrese su fecha de cumpleaños: ");
-                //birthDate = Console.ReadLine();
-
-                //Console.WriteLine("Ingrese su fecha de contratación: ");
-                //hiringDate = Console.ReadLine();
+                Console.WriteLine("Ingrese su fecha de contratación: ");
+                hiringDate = Console.ReadLine();
 
                 Console.WriteLine("Are you active? ");
                 bool isActive = Convert.ToBoolean(Console.ReadLine());
 
-                //Seteamos las tres nuevas propiedades diferentes a la clase padre
-                Console.WriteLine("Ingrese su porcentaje de comisión: ");
-                double commissionPercentaje = Convert.ToDouble (Console.ReadLine());
-                
-                Console.WriteLine("Ingrese el valor de las ventas: ");
-                decimal sales = Convert.ToDecimal(Console.ReadLine());
+                Console.WriteLine("Ingrese el salario devengado: ");
+                salary = Convert.ToDecimal (Console.ReadLine());
+
 
                 Console.WriteLine("******************************");
                 Console.WriteLine("******SALARY EMPLOYEE*********");
@@ -80,8 +76,21 @@ namespace EmployeeOPP
                     Salary = salary,
                 };
 
-                Console.Clear();
-                Console.WriteLine(salaryEmployee);
+
+
+                Console.Write("\n");
+                //Console.Clear();
+                //Mostramos en pantalla el ToStrin de la clase salaryEmployee
+                Console.WriteLine(salaryEmployee.ToString());
+
+                Console.Write("\n");
+                //Seteamos las tres nuevas propiedades diferentes a la clase padre
+                Console.WriteLine("Ingrese su porcentaje de comisión: ");
+                double commissionPercentaje = Convert.ToDouble (Console.ReadLine());
+                
+                Console.WriteLine("Ingrese el valor de las ventas: ");
+                decimal sales = Convert.ToDecimal(Console.ReadLine());
+
 
                 //salaryEmployee.Id = 1;
                 //salaryEmployee.FirstName = firstName;
@@ -90,7 +99,7 @@ namespace EmployeeOPP
                 //salaryEmployee.HiringDate = dateObject;
                 //salaryEmployee.IsActive = true;
 
-
+                Console.Write("\n");
                 Console.WriteLine("******************************");
                 Console.WriteLine("******COMISSION EMPLOYEE******");
                 Console.WriteLine("******************************");
@@ -109,7 +118,8 @@ namespace EmployeeOPP
 
                 };
 
-                Console.Clear();
+                Console.Write("\n");
+                //Console.Clear();
                 //Mostramos en pantalla el ToStrin de la clase commissionEmployee
                 Console.WriteLine(commissionEmployee.ToString());
 
