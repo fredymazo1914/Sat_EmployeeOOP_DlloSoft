@@ -86,7 +86,8 @@ namespace EmployeeOPP
                 Console.Write("\n");
                 //Seteamos las tres nuevas propiedades diferentes a la clase padre
                 Console.WriteLine("Ingrese su porcentaje de comisión: ");
-                double commissionPercentaje = Convert.ToDouble (Console.ReadLine());
+                float commissionPercentaje = Convert.ToSingle(Console.ReadLine());
+                commissionPercentaje = commissionPercentaje / 100;
                 
                 Console.WriteLine("Ingrese el valor de las ventas: ");
                 decimal sales = Convert.ToDecimal(Console.ReadLine());
@@ -113,7 +114,7 @@ namespace EmployeeOPP
                     BirthDate = dateObject,
                     HiringDate = dateObject,
                     IsActive = isActive,
-                    CommisionPercentaje = commissionPercentaje/100,
+                    CommisionPercentaje = commissionPercentaje,
                     Sales = sales,
 
                 };
@@ -122,6 +123,55 @@ namespace EmployeeOPP
                 //Console.Clear();
                 //Mostramos en pantalla el ToStrin de la clase commissionEmployee
                 Console.WriteLine(commissionEmployee.ToString());
+
+                //***************************************************************************************
+
+                Console.WriteLine("");
+
+                Console.WriteLine("***************************");
+                Console.WriteLine("******HOURLY EMPLOYEE******");
+                Console.WriteLine("***************************");
+
+                Console.WriteLine("");
+
+                Console.WriteLine("Ingrese identificación: ");
+                id = Convert.ToInt32(Console.ReadLine());
+
+                Console.WriteLine("Ingrese el nombre completo: ");
+                firstName = Console.ReadLine();
+
+                Console.WriteLine("Ingrese los apellidos: ");
+                lastName = Console.ReadLine();
+
+                Console.WriteLine("Are you active? ");
+                isActive = Convert.ToBoolean(Console.ReadLine());
+
+                Console.WriteLine("Ingrese su número de horas laboradas: ");
+                float hours = Convert.ToSingle (Console.ReadLine());
+
+                Console.WriteLine("Ingrese el valor da la hora laborada: ");
+                decimal hourValue = Convert.ToDecimal (Console.ReadLine());
+
+
+                //Esta es la forma de crear objetos a partir de una clase concreta
+                Employee hourtyEmployee = new HourtyEmployee()
+                {
+                    //Se hace set (asignar) a cada una de las propiedades
+                    Id = id,
+                    FirstName = firstName,
+                    LastName = lastName,
+                    BirthDate = dateObject,
+                    HiringDate = dateObject,
+                    IsActive = true,
+                    Hours = hours,
+                    HourValue = hourValue,
+                };
+
+                Console.Write("\n");
+                //Mostramos en pantalla el ToStrin de la clase salaryEmployee
+                Console.WriteLine(hourtyEmployee.ToString());
+                                
+                Console.WriteLine();
 
             }
             catch (Exception ex)//ex es una variable

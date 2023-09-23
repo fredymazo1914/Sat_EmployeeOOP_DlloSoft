@@ -10,17 +10,17 @@ namespace EmployeeOOP.Clases
 
         #region Properties
 
-        public double CommisionPercentaje { get; set; }
+        public float CommisionPercentaje { get; set; }
 
         public decimal Sales { get; set; }
 
         #endregion
 
         #region Methods
-
+                
         public override decimal GetValueToPay()
         {
-            return Sales * (decimal)CovertPercentage(CommisionPercentaje);
+            return Sales * (decimal)CommisionPercentaje;
         }
 
         public override string ToString()
@@ -31,10 +31,10 @@ namespace EmployeeOOP.Clases
                 $"Value to Pay..... {GetValueToPay():C2}";
         }
 
-        public double CovertPercentage(double commisionPercentage)
-        {
-            return commisionPercentage / 100;
-        }
+        //public float CovertPercentage(float commisionPercentage)
+        //{
+        //    return commisionPercentage / 100;
+        //}
 
         #endregion
 

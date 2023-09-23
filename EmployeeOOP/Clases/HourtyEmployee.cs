@@ -9,18 +9,26 @@ namespace EmployeeOOP.Clases
 
         #region Properties
 
-        public DateTime Hours { get; set; }
+        public float Hours { get; set; }
 
-        public int HourValue  { get; set; }
-
-        public override decimal GetValueToPay()
-        {
-            throw new NotImplementedException();
-        }
+        public decimal HourValue  { get; set; }
 
         #endregion
 
         #region Methods
+
+        public override decimal GetValueToPay()
+        {
+            return (decimal)Hours * HourValue;
+        }
+
+        public override string ToString()
+        {
+            return $"{base.ToString()}\n\t" +
+                   $"Hours..............{Hours:N2}\n\t" +
+                   $"Value per hour.....{HourValue:C2}\n\t" +
+                   $"Value to Pay..... {GetValueToPay():C2}";
+        }
 
         #endregion
 
