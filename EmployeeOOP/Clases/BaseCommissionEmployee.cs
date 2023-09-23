@@ -10,13 +10,20 @@ namespace EmployeeOOP.Clases
         #region Properties
 
         public decimal Base { get; set; }
+        public float CommissionPercentaje { get; internal set; }
 
         #endregion
 
         #region Methods
         public override decimal GetValueToPay()
         {
-            throw new System.NotImplementedException();
+            return base.GetValueToPay() + Base;
+        }
+
+        public override string ToString()
+        {
+            return $"{base.ToString()}\n\t" +
+                $"Base................{Base:C2}";
         }
 
         #endregion

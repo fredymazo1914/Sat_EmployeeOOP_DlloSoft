@@ -170,7 +170,64 @@ namespace EmployeeOPP
                 Console.Write("\n");
                 //Mostramos en pantalla el ToStrin de la clase salaryEmployee
                 Console.WriteLine(hourtyEmployee.ToString());
-                                
+
+                //**************************
+
+                Console.WriteLine("********************************");
+                Console.WriteLine("****BASE COMMISSION EMPLOYEE****");
+                Console.WriteLine("********************************");
+
+                Console.WriteLine("");
+
+                Console.WriteLine("Ingrese identificación: ");
+                id = Convert.ToInt32(Console.ReadLine());
+
+                Console.WriteLine("Ingrese el nombre completo: ");
+                firstName = Console.ReadLine();
+
+                Console.WriteLine("Ingrese los apellidos: ");
+                lastName = Console.ReadLine();
+
+                Console.WriteLine("Are you active? ");
+                isActive = Convert.ToBoolean(Console.ReadLine());
+
+                Console.WriteLine("Ingrese su porcentaje de comisión: ");
+                commissionPercentaje = Convert.ToSingle(Console.ReadLine());
+                commissionPercentaje = commissionPercentaje / 100;
+
+                Console.WriteLine("Ingrese el valor de las ventas: ");
+                sales = Convert.ToDecimal(Console.ReadLine());
+
+                Console.WriteLine("Ingrese el valor por hora: ");
+                decimal baseSalary = Convert.ToDecimal(Console.ReadLine());
+
+                //Esta es la forma de crear objetos a partir de una clase concreta
+                Employee baseCommissionEmployee = new BaseCommissionEmployee ()
+                {
+                    //Se hace set (asignar) a cada una de las propiedades
+                    Id = id,
+                    FirstName = firstName,
+                    LastName = lastName,
+                    BirthDate = dateObject,
+                    HiringDate = dateObject,
+                    IsActive = true,
+                    CommissionPercentaje = commissionPercentaje,
+                    Sales = sales,
+                    Base = baseSalary
+                };
+
+                Console.Write("\n");
+                //Mostramos en pantalla el ToStrin de la clase salaryEmployee
+                Console.WriteLine(baseCommissionEmploye.ToString());
+
+
+
+
+
+
+
+
+
                 Console.WriteLine();
 
             }
